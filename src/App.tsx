@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect, useCallback } from 'react'
-import { Layout, Slider, Notes, TicTacToe, Timer, Accordion, Dropdown } from './components';
+import { Layout, Slider, Notes, TicTacToe, Timer, Accordion, Dropdown, FileExplorer } from './components';
 import { ToastProvider } from './components/toast'
 import './App.css'
 
@@ -17,6 +17,7 @@ function App() {
     { id: 4, label: 'Tic Tac Toe', value: 'Tic Tac Toe', comp: <TicTacToe />},
     { id: 5, label: 'Accordion', value: 'Accordion', comp: <Accordion />},
     { id: 6, label: 'Slider', value: 'Slider', comp: <Slider />},
+    { id: 7, label: 'File Explorer', value: 'File Explorer', comp: <FileExplorer />}
   ], []);
   const [selectedOption, setSelectedOption] = useState< option | null>(null);
 

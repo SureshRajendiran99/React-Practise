@@ -5,6 +5,7 @@ import { Notes } from './notes'
 import { Accordion } from './accordion'
 import { TicTacToe } from './ticTacToe'
 import { Dropdown } from './dropdown'
+import { FileExplorer } from './fileExplorer'
 
 export {
     Layout,
@@ -13,5 +14,6 @@ export {
     Notes,
     Accordion,
     TicTacToe,
-    Dropdown
+    Dropdown,
+    FileExplorer,
 }
