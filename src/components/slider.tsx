@@ -6,9 +6,9 @@ import './slider.css'
 
 export const Slider = () => {
     const [images, setImages] = useState([
-        { url: image1, active: true},
-        { url: image2, active: false},
-        { url: image3, active: false}
+        { url: image1, active: true, caption: 'A calm and beautifully composed moment captured in time'},
+        { url: image2, active: false, caption: 'Highlighting the details that make this scene truly stand out'},
+        { url: image3, active: false, caption: 'A snapshot that blends light, color, and emotion perfectly'},
     ]);
 
     const onSetImages = (activeInd: number) => {
@@ -28,18 +28,20 @@ export const Slider = () => {
             <div style={{
                 display: d.active ? 'block' : 'none',
             }}>
-                <div 
-                // style={{ display: 'flex', justifyContent: 'space-between', padding: '12px' }}
+                <figure 
+                    style={{border: '1px solid black', borderRadius: '8px', position: 'fixed' }}
                 >
-                    <span className='arrow' onClick={() => onSetImages(i-1)}> {'<'} </span>
+                    <span className='arrow arrow-left' onClick={() => onSetImages(i-1)}> {'<'} </span>
                     <img key={i} src={d.url} style={{
                         height: '350px',
                         width: '350px',
                         objectFit: 'contain',
-
+                        borderBottom: '1px solid #e5e7eb',
+                        padding: '5px'
                     }} />
-                    <span className='arrow' onClick={() => onSetImages(i + 1)}> {'>'} </span>
-                </div>
+                    <span className='arrow arrow-right' onClick={() => onSetImages(i + 1)}> {'>'} </span>
+                    <figcaption style={{ width: '350px', padding: '5px'}}> <i> {d.caption} </i></figcaption>
+                </figure>
             </div>
         )
     )

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const n = 2;
+const n = 3;
 const TIMEOUT = 1 //sec
 export const Layout = () => {
     const [grid, setGrid] = useState(Array.from({ length: n * n}, (_, i) => i));
@@ -32,36 +32,32 @@ export const Layout = () => {
         }
     }, [selected])
 
-
     return (
-        <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            height: 'calc(100vh - 32px)',
-        }}>
+        <>
+            <h4 style={{ textAlign: 'center'}}> Memory Game: Once you select all boxes, it will reset in selected order</h4>
             <div style ={{
                 display: 'grid',
-                // textAlign: 'center',
-                alignContent: 'center',
-                gridTemplateColumns: `repeat(${n}, 1fr)`,
-                gridGap: '10px',
+                justifyContent: 'center',
+                gridTemplateColumns: `repeat(${n}, 80px)`,
+                gridGap: '5px',
+                marginTop: '50px'
             }}>
                 {grid.map((g =>
                 <span key={g}
                     style={{
-                        height: '100px',
-                        width: '100px',
+                        height: '50px',
+                        // width: '100px',
                         background: selected.includes(g) ? 'green' : '#e1f1f2',
                         alignContent: 'center',
                         textAlign: 'center',
-                        color: 'black'
+                        color: 'black',
+                        borderRadius: '4px'
                     }}
                     onClick={() => onClickCell(g)}
                 
-                > {g} </span>))}
+                />))}
             </div>
-        </div>
+        </>
     )
 };
 

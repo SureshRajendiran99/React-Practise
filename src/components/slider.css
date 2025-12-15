@@ -1,5 +1,18 @@
 .arrow {
-    font-size: 32px;
+    font-size: 28px;
+    font-weight: bold;
     align-self: center;
     cursor: pointer;
+    z-index: 999;
+}
+
+.arrow-left {
+   position: absolute;
+   top: 40%;
+}
+
+.arrow-right {
+   position: absolute;
+   top: 40%;
+   right: 0;
 }
