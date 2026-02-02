@@ -1,0 +1,26 @@
+.board {
+    border: 1px solid black;
+    display: inline-block;
+}
+
+.board-row {
+    display: flex;
+    /* justify-content: center; */
+    /* border: 1px solid black; */
+}
+
+.board-col {
+    height: 30px;
+    width: 30px;
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+}
+
+.snake {
+    background-color: greenyellow;
+}
+
+.food {
+    background-color: red;
+    border-radius: 50%;
+}

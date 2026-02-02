@@ -6,6 +6,11 @@ import { Accordion } from './accordion'
 import { TicTacToe } from './ticTacToe'
 import { Dropdown } from './dropdown'
 import { FileExplorer } from './fileExplorer'
+import { SnakeGame } from './snakeGame/snakeGame'
+import { AutoComplete } from './autoComplete/AutoComplete'
+import { Story } from './Story'
+import { TypingEffect } from './typingEffect'
+import { DragAndDrop } from './dragAndDrop'
 
 export {
     Layout,
@@ -16,4 +21,9 @@ export {
     TicTacToe,
     Dropdown,
     FileExplorer,
+    SnakeGame,
+    AutoComplete,
+    Story,
+    TypingEffect,
+    DragAndDrop,
 }
