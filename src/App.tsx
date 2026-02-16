@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect, useCallback } from 'react'
 import { Layout, Slider, Notes, TicTacToe, Timer, Accordion, Dropdown, FileExplorer, 
-  SnakeGame, AutoComplete, Story, TypingEffect, DragAndDrop,
+  SnakeGame, AutoComplete, Story, TypingEffect, DragAndDrop, MultiSelect
 } from './components';
 import { ToastProvider } from './components/toast'
 import './App.css'
@@ -25,6 +25,7 @@ function App() {
     { id: 10, label: 'Story', value: 'Story', comp: <Story />},
     { id: 11, label: 'Typing Effect', value: 'Typing Effect', comp: <TypingEffect />},
     { id: 12, label: 'Drag & Drop', value: 'Drag & Drop', comp: <DragAndDrop />},
+    { id: 13, label: 'Dropdown', value: 'Dropdown', comp: <MultiSelect />},
   ], []);
   const [selectedOption, setSelectedOption] = useState< option | null>(null);
 

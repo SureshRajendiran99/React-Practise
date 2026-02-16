@@ -11,6 +11,7 @@ import { AutoComplete } from './autoComplete/AutoComplete'
 import { Story } from './Story'
 import { TypingEffect } from './typingEffect'
 import { DragAndDrop } from './dragAndDrop'
+import { MultiSelect } from './dropdown/multiselect'
 
 export {
     Layout,
@@ -26,4 +27,5 @@ export {
     Story,
     TypingEffect,
     DragAndDrop,
+    MultiSelect,
 }

@@ -132,10 +132,33 @@ const Notify = ({
   );
 };
 
+const ImageList = ({ data, setSelected, isLoading }: {data: {url: string, id: number}, setSelected: Function, isLoading: boolean}) => {
+
+
+  return (
+    <div style={{ position: 'relative', height: '50px', width: '50px', border: '3px solid red', borderRadius: '50%', cursor: 'pointer' }}>
+
+      {isLoading && (
+        <div className='story-loader' />
+        
+      )}
+      <img
+        key={data.id}
+        src={data.url}
+        height="100%"
+        width="100%"
+        style={{ borderRadius: '50%', objectFit: 'cover' }}
+        onClick={() => setSelected(data.url)}
+      />
+    </div>
+  )
+}
+
 export const Story = () => {
   const [storyList, setStoryList] = useState<{url: string, id: number}[]>([]);
   const [selected, setSelected] = useState('');
   const [toast, setToast] = useState<any>({});
+  const [loaderId, setLoaderId] = useState<any>(null);
 
   const onUpload = (e: any) => {
     const file = e.target.files[0];
@@ -155,11 +178,15 @@ export const Story = () => {
       id: Date.now(),
     };
     setStoryList((prev) => [story, ...prev]);
-    setToast({
-      message: 'Story uploaded successfully',
-      isShow: true,
-      type: 'success',
-    });
+    setLoaderId(story.id);
+    setTimeout(() => {
+      setToast({
+        message: 'Story uploaded successfully',
+        isShow: true,
+        type: 'success',
+      });
+      setLoaderId(null);
+    }, 10000);
 
     setTimeout(() => {
       setStoryList((prev) =>
@@ -209,14 +236,7 @@ export const Story = () => {
         }}
       >
         {storyList.map((data) => (
-          <img
-            key={data.id}
-            src={data.url}
-            height="50px"
-            width="50px"
-            style={{ border: '3px solid red', borderRadius: '50%' }}
-            onClick={() => setSelected(data.url)}
-          />
+          <ImageList key={data.id} data={data} setSelected={setSelected} isLoading={loaderId === data.id} />
         ))}
       </div>
       {selected && <Modal url={selected} onClose={onClose} isOpen={true} />}
