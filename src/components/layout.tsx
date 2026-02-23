@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const n = 3;
 const TIMEOUT = 1 //sec
 export const Layout = () => {
-    const [grid, setGrid] = useState(Array.from({ length: n * n}, (_, i) => i));
+    const [grid] = useState(Array.from({ length: n * n}, (_, i) => i));
     const [selected, setSelected] = useState<number[]>([]);
     const [isAllSel, setIsAllSel] = useState(false);
 

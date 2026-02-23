@@ -41,7 +41,7 @@ export const Notes = () => {
                 }}>
                     <textarea placeholder="Type to add a note" name='add notes'
                         value={note}
-                        style={{ height: '78%', resize: 'none', border: 'none', outline: 'none'}}
+                        style={{ flex: 1,resize: 'none', border: 'none', outline: 'none'}}
                         onChange={(e) => note.length < 200 && setNote(e.target.value)}
                     />
 
@@ -58,7 +58,7 @@ export const Notes = () => {
                     >
                         <div
                             title={data.value}
-                            style={{ height: '78%', whiteSpace: 'normal', wordBreak: 'break-word', overflowY: 'auto'}}
+                            style={{ flex: 1, whiteSpace: 'normal', wordBreak: 'break-word', overflowY: 'auto'}}
                         > {data.value} </div>
 
                         <div style={{ display: 'flex', justifyContent: 'space-between'}}>

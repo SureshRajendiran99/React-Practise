@@ -33,7 +33,7 @@ export const Timer = () => {
                 <button onClick={onStop}> Stop </button>
             </div>
             <div style={{ display: 'flex', height: '300px', width: '300px', border: '1px solid black', borderRadius: '50%', justifyContent: 'center', alignItems: 'center'}}>
-                <div style={{ display: 'flex', height: '200px', width: '200px', border: '1px solid black', borderRadius: '50%', justifyContent: 'center', alignItems: 'center'}}/>
+                <div style={{ display: 'flex', height: '150px', width: '150px', border: '1px solid black', borderRadius: '50%', justifyContent: 'center', alignItems: 'center'}}/>
             </div>
             {open && <Modal onClose={() => setOpen(false)}/>}
         </div>

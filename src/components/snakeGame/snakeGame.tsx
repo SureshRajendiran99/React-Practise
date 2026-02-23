@@ -68,7 +68,7 @@ export const SnakeGame = () => {
     return (
         <div className="board" tabIndex={0} ref={boardRef}>
             {board.map((row: string[], ri: number) => <div key={ri} className="board-row">
-                    { row.map((col, ci) => <div 
+                    { row.map((_, ci) => <div 
                         key={`${ri}-${ci}`} 
                         className={`board-col ${isSnake(ri, ci) ? 'snake' : ''} ${ri === foodRef.current[0] && ci === foodRef.current[1] ? 'food' : ''}`}
                     />)}

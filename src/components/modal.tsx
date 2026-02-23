@@ -1,5 +1,4 @@
 import { useState } from "react";
-import ReactDOM from "react-dom";
 
 export const Modal = ({ onClose }: { onClose: Function }) => {
   const [isOpen, setIsOpen] = useState(true);
